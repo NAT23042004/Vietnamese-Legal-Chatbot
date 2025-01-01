@@ -33,44 +33,9 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Docker.graphrag_neo4j_etl/Dockerfile.executor": "Run",
-    "Python tests.Python tests in test_vector_index.py.executor": "Run",
-    "Python.agent.executor": "Run",
-    "Python.agents (1).executor": "Run",
-    "Python.cypher_chain.executor": "Run",
-    "Python.dataloader.executor": "Run",
-    "Python.detail_extractor.executor": "Run",
-    "Python.doc_processor (1).executor": "Run",
-    "Python.doc_processor.executor": "Run",
-    "Python.embedding_model.executor": "Run",
-    "Python.example_agents.executor": "Run",
-    "Python.example_cypher_chain.executor": "Run",
-    "Python.example_vector_chain.executor": "Run",
-    "Python.example_vector_index.executor": "Run",
-    "Python.kg_constructing.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.preprocessing (1).executor": "Run",
-    "Python.preprocessing.executor": "Run",
-    "Python.rag_agent (1).executor": "Run",
-    "Python.test (1).executor": "Run",
-    "Python.test.executor": "Run",
-    "Python.vector_index.executor": "Run",
-    "Python.vector_indexes.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Admin/python_project/Project/SOICT HACKATHON/Chatbot_GraphRAG",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
   },
-  "keyToStringList": {
-    "GitStage.ChangesTree.GroupingKeys": [
-      "directory",
-      "module",
-      "repository"
     ]
   }
-}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Admin\python_project\Project\SOICT HACKATHON\Chatbot_GraphRAG\graphrag_neo4j_etl\src\data\chude\chude19\demuc\demuc1\vanban35" />
@@ -213,9 +178,7 @@
       <list>
         <item itemvalue="Python.main" />
         <item itemvalue="Python.example_vector_chain" />
-        <item itemvalue="Python.rag_agent (1)" />
         <item itemvalue="Docker.graphrag_neo4j_etl/Dockerfile" />
-        <item itemvalue="Python.rag_agent" />
       </list>
     </recent_temporary>
   </component>
