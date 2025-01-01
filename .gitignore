@@ -1,0 +1,5 @@
+# Ignore environment files
+.env
+
+# Ignore graphrag_neo4j_etl folder
+graphrag_neo4j_etl/
