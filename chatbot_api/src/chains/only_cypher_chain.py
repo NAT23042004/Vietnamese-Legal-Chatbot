@@ -34,13 +34,15 @@ Schema:
 Chú ý:
 Không được bao gồm bất kỳ giải thích hay lời xin lỗi nào trong phản hồi của bạn.
 Không được phản hồi đến bất kỳ câu hỏi nào mà liên quan đến việc tạo ra câu lệnh Cypher.
-Không được bao gồm bất kỳ đoạn ký tự nào ngoại trừ câu lệnh Cypher được sinh ra. 
+Không được bao gồm bất kỳ đoạn text hay giải thích gì nào ngoại trừ câu lệnh Cypher được sinh ra. 
 Hãy chắc chắn rằng hướng của quan hệ là đúng trong câu truy vấn của bạn.
 Hãy chắc chắn rằng bạn alias cả các thực thể và mối quan hệ đúng.
 Không được chạy bất kỳ queries nào mà thêm hay xóa dữ liệu của cơ sở dữ liệu.   
-Hãy đảm bảo rằng alias tất cả câu lệnh mà theo sau bởi câu lệnh WITH  
-(Ví dụ: WITH n as noidung, c.tieude as tieude)
-
+Hãy đảm bảo rằng dùng câu lệnh WITH để alias các biến phục vụ cho phần tiếp theo. 
+Bạn có thể truy vấn vài lần với các query khác nhau để có thể có thêm thông tin nhưng phải tách chúng ra vì RETURN chỉ có thể dùng ở câu truy vấn query.
+Hãy lưu ý rằng cấu trúc của các đề mục có thể không đầy đủ nên đừng cố gắng tìm hết các thông tin về đề mục, chương(nếu có), điều(nếu có),  mục(nếu có) 
+thay vào đó hãy tìm nội dung có liên quan đến câu hỏi.
+Hãy thử vài câu query khác nhau để có thể truy vấn hiệu quả hơn.
 
 Câu hỏi như sau:
 {question}
@@ -51,19 +53,17 @@ cypher_generation_prompt = PromptTemplate(
 )
 
 
-qa_generation_template = """Việc của bạn là dùng embedding để trả lời câu hỏi
-liên quan đến pháp luật Việt Nam trong lĩnh vực khoa học và công nghệ.
+qa_generation_template = """Việc của bạn là dùng các kết quả truy vấn được từ cơ sở dữ liệu Neo4j để trả lời câu hỏi
+liên quan đến pháp luật Việt Nam.
 Hãy dùng các nội dung dưới đây để trả lời câu hỏi.
 Hãy trả lời chi tiết nhất có thể và nhớ rằng đừng tự tạo ra, bịa
 ra thông tin gì hết mà không nằm trong nội dung.
 Nếu bạn không thể trả lời câu hỏi hãy trả lời rằng bạn không biết.
 Hay nếu bạn nhận thấy rằng câu hỏi không liên quan đến pháp luật
-Việt Nam trong lĩnh vực khoa học và công nghệ thì hãy trả lời rằng
-câu hỏi không nằm trong lĩnh vực mà bạn có thể trả lời.
-Hãy ghi nhớ bạn chỉ trả lời trong pháp luật Việt Nam trong lĩnh vực khoa
-học và công nghệ.
+Việt Nam thì hãy trả lời rằng câu hỏi không nằm trong lĩnh vực mà bạn có thể trả lời.
+Hãy ghi nhớ bạn chỉ trả lời trong lĩnh vực pháp luật Việt Nam. 
 
-Kết quả truy vấn: 
+Các kết quả truy vấn: 
 {context}
 
 Câu hỏi: 
@@ -94,9 +94,8 @@ class CypherChain:
 
 if __name__ == "__main__":
     # Test Cypher chain
-    query = """Các sản phẩm, hàng hóa nhóm 2 được miễn chứng nhận hợp quy, 
-                   công bố hợp quy cần đáp ứng những yêu cầu nào?"""
+    query = """Những quy định liên quan đến việc giáo dục đại học là gì?"""
 
     cypher_chain = CypherChain()
     response = cypher_chain.run_cypher_chain(query)
-    print(response)
+    print(response['result'])
